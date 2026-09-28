@@ -1,0 +1,15 @@
+[package]
+name = "vaultcore-bitcoin"
+description = "Bitcoin-specific wallet functionality for VaultCore: BIP-44/84 addresses, transaction construction, signing, and parsing."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+vaultcore-crypto = { path = "../vaultcore-crypto" }
+bitcoin = { version = "0.32", default-features = false, features = ["std", "secp-recovery"] }
+
+[dev-dependencies]
+hex = "0.4"

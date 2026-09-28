@@ -1,0 +1,16 @@
+[workspace]
+resolver = "2"
+members = ["crates/vaultcore-crypto", "crates/vaultcore-bitcoin"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/DushaneW/vaultcore"
+rust-version = "1.75"
+
+[profile.release]
+# Panics unwind by default; wallet code should fail loudly rather than abort
+# the process mid-signing, but this is revisited once the CLI/SDK boundary
+# exists in later phases.
+opt-level = 3

@@ -1,0 +1,18 @@
+/target/
+**/target/
+*.log
+.DS_Store
+
+# Cargo.lock is committed (not gitignored): this workspace will grow a CLI
+# binary crate in a later phase, and cargo's own guidance is to check in the
+# lockfile for binaries. It also pins `zeroize` to 1.7.0 -- see
+# docs/crypto-core.md -- which an uncommitted lockfile would let `cargo
+# update` silently undo.
+
+# Local credentials and editor state
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/
+*.swp
